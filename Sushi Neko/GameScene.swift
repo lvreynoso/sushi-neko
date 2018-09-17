@@ -42,6 +42,8 @@ class GameScene: SKScene {
         }
     }
     var bgMusic: SKAudioNode = SKAudioNode(fileNamed: "nyanCat.mp3")
+    var punchSFX: SKAudioNode = SKAudioNode(fileNamed: "sfxSwipe.caf")
+    let punchSound: SKAction = SKAction.play()
     
     // build the sushi tower
     func addTowerPiece(side: Side) {
@@ -57,7 +59,7 @@ class GameScene: SKScene {
         // add on top of the last piece, default to first piece
         let lastPosition = lastPiece?.position ?? sushiBasePiece.position
         newPiece.position.x = lastPosition.x
-        newPiece.position.y = lastPosition.y + 55
+        newPiece.position.y = lastPosition.y + 110
         
         // increment Z to make sure it's on *top* of the last piece
         let lastZPosition = lastPiece?.zPosition ?? sushiBasePiece.zPosition
@@ -137,20 +139,23 @@ class GameScene: SKScene {
         // figure out which side of the screen the touch was on
         if location.x > size.width / 2 {
             playerCharacter.side = .right
+            punchSFX.run(punchSound)
         } else {
             playerCharacter.side = .left
+            punchSFX.run(punchSound)
         }
         
         if let firstPiece = sushiTower.first as SushiPiece? {
+            // remove from sushi tower array
+            firstPiece.flip(playerCharacter.side)
+            sushiTower.removeFirst()
+            
             if playerCharacter.side == firstPiece.side {
                 gameOver()
                 return
             }
             health += 0.1
             score += 1
-            // remove from sushi tower array
-            sushiTower.removeFirst()
-            firstPiece.flip(playerCharacter.side)
             // add a new sushi piece to the top of the tower
             addRandomPieces(total: 1)
         }
@@ -159,7 +164,7 @@ class GameScene: SKScene {
     func moveTowerDown() {
         var n: CGFloat = 0
         for piece in sushiTower {
-            let y = (n * 110) + 215
+            let y = (n * 110) + 445
             piece.position.y -= (piece.position.y - y) * 0.5
             n += 1
         }
@@ -179,7 +184,7 @@ class GameScene: SKScene {
     
     func gameOver() {
         state = .gameOver
-        
+        bgMusic.run(SKAction.stop())
         // paint it red
         let turnRed = SKAction.colorize(with: .red, colorBlendFactor: 1.0, duration: 0.50)
         sushiBasePiece.run(turnRed)
