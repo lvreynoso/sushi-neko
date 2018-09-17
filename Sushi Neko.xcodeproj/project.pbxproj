@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53E9CF6214F489A00219CFF /* nyanCat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E53E9CF5214F489A00219CFF /* nyanCat.mp3 */; };
 		E59FD326214F001600D26DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FD325214F001600D26DA8 /* AppDelegate.swift */; };
 		E59FD328214F001600D26DA8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E59FD327214F001600D26DA8 /* GameScene.sks */; };
 		E59FD32A214F001600D26DA8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E59FD329214F001600D26DA8 /* Actions.sks */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E53E9CF5214F489A00219CFF /* nyanCat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nyanCat.mp3; sourceTree = "<group>"; };
 		E59FD322214F001600D26DA8 /* Sushi Neko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sushi Neko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59FD325214F001600D26DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E59FD327214F001600D26DA8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -33,10 +35,10 @@
 		E59FD335214F001800D26DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E59FD337214F001800D26DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E59FD33D214F00E500D26DA8 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
-		E59FD340214F010300D26DA8 /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
 		E59FD341214F012F00D26DA8 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		E59FD343214F062B00D26DA8 /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 		E59FD345214F0AB100D26DA8 /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
+		E59FD348214F230C00D26DA8 /* sfxSwipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfxSwipe.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,7 @@
 		E59FD324214F001600D26DA8 /* Sushi Neko */ = {
 			isa = PBXGroup;
 			children = (
-				E59FD33F214F010300D26DA8 /* SFX */,
+				E59FD347214F230C00D26DA8 /* SFX */,
 				E59FD33D214F00E500D26DA8 /* assets.atlas */,
 				E59FD325214F001600D26DA8 /* AppDelegate.swift */,
 				E59FD341214F012F00D26DA8 /* MSButtonNode.swift */,
@@ -87,10 +89,11 @@
 			path = "Sushi Neko";
 			sourceTree = "<group>";
 		};
-		E59FD33F214F010300D26DA8 /* SFX */ = {
+		E59FD347214F230C00D26DA8 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
-				E59FD340214F010300D26DA8 /* sfx_swipe.caf */,
+				E53E9CF5214F489A00219CFF /* nyanCat.mp3 */,
+				E59FD348214F230C00D26DA8 /* sfxSwipe.caf */,
 			);
 			path = SFX;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				E59FD328214F001600D26DA8 /* GameScene.sks in Resources */,
 				E59FD33E214F00E600D26DA8 /* assets.atlas in Resources */,
 				E59FD333214F001800D26DA8 /* Assets.xcassets in Resources */,
+				E53E9CF6214F489A00219CFF /* nyanCat.mp3 in Resources */,
 				E59FD336214F001800D26DA8 /* LaunchScreen.storyboard in Resources */,
 				E59FD32A214F001600D26DA8 /* Actions.sks in Resources */,
 			);

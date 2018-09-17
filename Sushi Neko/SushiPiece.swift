@@ -9,7 +9,7 @@
 import SpriteKit
 
 class SushiPiece: SKSpriteNode {
-    
+
     // chopsticks objects
     var rightChopstick: SKSpriteNode!
     var leftChopstick: SKSpriteNode!
@@ -25,8 +25,6 @@ class SushiPiece: SKSpriteNode {
             case .none:
                 leftChopstick.isHidden = true
                 rightChopstick.isHidden = true
-            default:
-                print("This should never happen.")
             }
         }
     }
@@ -48,5 +46,23 @@ class SushiPiece: SKSpriteNode {
         
         // set the default side
         side = .none
+    }
+    
+    func flip(_ side: Side) {
+        // flip the sushi out of the screen
+        var actionName: String = ""
+        if side == .left {
+            actionName = "FlipRight"
+        } else if side == .right {
+            actionName = "FlipLeft"
+        }
+        
+        // load the appropriate action
+        let flip = SKAction(named: actionName)!
+        // create a node removal action
+        let remove = SKAction.removeFromParent()
+        // build the sequence then execute
+        let sequence = SKAction.sequence([flip, remove])
+        run(sequence)
     }
 }

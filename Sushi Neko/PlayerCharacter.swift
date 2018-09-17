@@ -9,6 +9,9 @@
 import SpriteKit
 
 class PlayerCharacter: SKSpriteNode {
+    let punch: SKAction = SKAction.animate(with: [SKTexture(imageNamed: "character2.png"), SKTexture(imageNamed: "character3.png")], timePerFrame: 0.07, resize: false, restore: true)
+    var punchSFX: SKAudioNode = SKAudioNode(fileNamed: "sfxSwipe.caf")
+    let punchSound: SKAction = SKAction.play()
     
     // character side
     var side: Side = .left {
@@ -21,6 +24,9 @@ class PlayerCharacter: SKSpriteNode {
                 xScale = -1
                 position.x = 252
             }
+            run(punch)
+            punchSFX.run(punchSound)
+            self.texture = SKTexture(imageNamed: "character1.png")
         }
     }
     
